@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Câu hỏi trắc nghiệm - Chiến dịch Hồ Chí Minh</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+        header {
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            background: white;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: red;
+        }
+        .question {
+            margin-bottom: 20px;
+        }
+        .question h3 {
+            margin-bottom: 10px;
+        }
+        .options {
+            list-style: none;
+            padding: 0;
+        }
+        .options li {
+            margin: 5px 0;
+        }
+        .submit-btn {
+            display: block;
+            width: 100%;
+            background: #007bff;
+            color: white;
+            border: none;
+            padding: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        .submit-btn:hover {
+            background: #0056b3;
+        }
+        .result {
+            margin-top: 20px;
+            font-weight: bold;
+            color: green;
+        }
+    </style>
+    <script>
+        function checkAnswers() {
+            const correctAnswers = ["b", "a", "c", "a", "d", "b", "c", "c", "a", "a"];
+            let score = 0;
+            for (let i = 1; i <= correctAnswers.length; i++) {
+                const options = document.getElementsByName(`q${i}`);
+                for (const option of options) {
+                    if (option.checked && option.value === correctAnswers[i - 1]) {
+                        score++;
+                    }
+                }
+            }
+             document.getElementById("result").textContent = `Bạn đã trả lời đúng ${score}/${correctAnswers.length} câu hỏi. Hãy nhấn vào đây:`;
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Câu hỏi trắc nghiệm - Chiến dịch Hồ Chí Minh</h1>
+    </header>
+    <div class="container">
+        <div class="question">
+            <h3>1. Chiến dịch Hồ Chí Minh diễn ra vào thời gian nào?</h3>
+            <ul class="options">
+                <li><input type="radio" name="q1" value="a"> A. Tháng 3/1975</li>
+                <li><input type="radio" name="q1" value="b"> B. Tháng 4/1975</li>
+                <li><input type="radio" name="q1" value="c"> C. Tháng 5/1975</li>
+                <li><input type="radio" name="q1" value="d"> D. Tháng 6/1975</li>
+            </ul>
+        </div>
+        <div class="question">
+            <h3>2. Phương châm của chiến dịch Hồ Chí Minh là gì?</h3>
+            <ul class="options">
+                <li><input type="radio" name="q2" value="a"> A. Thần tốc, táo bạo, bất ngờ, chắc thắng</li>
+                <li><input type="radio" name="q2" value="b"> B. Đánh nhanh, thắng nhanh</li>
+                <li><input type="radio" name="q2" value="c"> C. Đánh chắc, tiến chắc</li>
+                <li><input type="radio" name="q2" value="d"> D. Bất ngờ, thụ động</li>
+            </ul>
+        </div>
+        <div class="question">
+            <h3>3. Ai là Tổng tư lệnh của chiến dịch Hồ Chí Minh?</h3>
+            <ul class="options">
+                <li><input type="radio" name="q3" value="a"> A. Võ Nguyên Giáp</li>
+                <li><input type="radio" name="q3" value="b"> B. Nguyễn Chí Thanh</li>
+                <li><input type="radio" name="q3" value="c"> C. Văn Tiến Dũng</li>
+                <li><input type="radio" name="q3" value="d"> D. Hoàng Văn Thái</li>
+            </ul>
+        </div>
+        <div class="question">
+            <h3>4. Biểu tượng của chiến thắng trong chiến dịch Hồ Chí Minh là gì?</h3>
+            <ul class="options">
+                <li><input type="radio" name="q4" value="a"> A. Lá cờ cắm trên Dinh Độc Lập</li>
+                <li><input type="radio" name="q4" value="b"> B. Xe tăng tiến vào Sài Gòn</li>
+                <li><input type="radio" name="q4" value="c"> C. Sân bay Tân Sơn Nhất bị chiếm</li>
+                <li><input type="radio" name="q4" value="d"> D. Toàn bộ địch đầu hàng</li>
+            </ul>
+        </div>
+        <div class="question">
+            <h3>5. Tại sao chiến dịch này được đặt tên là "Chiến dịch Hồ Chí Minh"?</h3>
+            <ul class="options">
+                <li><input type="radio" name="q5" value="a"> A. Vì diễn ra tại quê hương của Hồ Chí Minh</li>
+                <li><input type="radio" name="q5" value="b"> B. Vì Hồ Chí Minh trực tiếp chỉ huy</li>
+                <li><input type="radio" name="q5" value="c"> C. Vì Hồ Chí Minh là biểu tượng tinh thần</li>
+                <li><input type="radio" name="q5" value="d"> D. Để tưởng nhớ Hồ Chí Minh</li>
+            </ul>
+        </div>
+        <div class="question">
+            <h3>6. Chiến dịch Hồ Chí Minh kết thúc thắng lợi đã đánh dấu điều gì?</h3>
+            <ul class="options">
+                <li><input type="radio" name="q6" value="a"> A. Chấm dứt hoàn toàn ách thống trị của thực dân Pháp</li>
+                <li><input type="radio" name="q6" value="b"> B. Miền Nam được giải phóng, đất nước thống nhất</li>
+                <li><input type="radio" name="q6" value="c"> C. Đánh bại hoàn toàn đế quốc Mỹ</li>
+                <li><input type="radio" name="q6" value="d"> D. Giải phóng vùng Tây Nguyên </li>
+            </ul>
+        </div>
+        <div class="question">
+            <h3>7. Lực lượng Quân đội Nhân dân Việt Nam đã chia làm mấy hướng tấn công trong Chiến dịch Hồ Chí Minh</h3>
+            <ul class="options">
+                <li><input type="radio" name="q7" value="a"> A. 3 hướng</li>
+                <li><input type="radio" name="q7" value="b"> B. 4 hướng</li>
+                <li><input type="radio" name="q7" value="c"> C. 5 hướng</li>
+                <li><input type="radio" name="q7" value="d"> D. 6 hướng</li>
+            </ul>
+        </div>
+        <div class="question">
+            <h3>8. Chiến dịch Hồ Chí Minh còn được gọi với cái tên khác là gì?</h3>
+            <ul class="options">
+                <li><input type="radio" name="q8" value="a"> A. Chiến dịch Đại thắng Mùa Xuân</li>
+                <li><input type="radio" name="q8" value="b"> B. Chiến dịch Tổng Tiến Công 1975</li>
+                <li><input type="radio" name="q8" value="c"> C. Chiến dịch Giải phóng Sài Gòn</li>
+                <li><input type="radio" name="q8" value="d"> D. Chiến dịch Xuân Lộc</li>
+            </ul>
+        </div>
+        <div class="question">
+            <h3>9. Trong chiến dịch Hồ Chí Minh, tuyến phòng thủ quan trọng nhất của quân đội Sài Gòn trước khi tiến vào Sài Gòn là ở đâu?</h3>
+            <ul class="options">
+                <li><input type="radio" name="q9" value="a"> A. Xuân Lộc (Đồng Nai)</li>
+                <li><input type="radio" name="q9" value="b"> B. Đà Nẵng</li>
+                <li><input type="radio" name="q9" value="c"> C. Buôn Ma Thuật</li>
+                <li><input type="radio" name="q9" value="d"> D. Tây Ninh</li>
+            </ul>
+        </div>
+        <div class="question">
+            <h3>10. Lực lượng Quân đội Nhân dân Việt Nam đã sử dụng loại vũ khí nào làm chủ lực trong Chiến dịch Hồ Chí Minh?</h3>
+            <ul class="options">
+                <li><input type="radio" name="q10" value="a"> A. Pháo binh và xe tăng</li>
+                <li><input type="radio" name="q10" value="b"> B. Không quân</li>
+                <li><input type="radio" name="q10" value="c"> C. Hải quân</li>
+                <li><input type="radio" name="q10" value="d"> D. Bộ binh và đặc công</li>
+            </ul>
+        </div>
+        <button class="submit-btn" onclick="checkAnswers()">Nộp bài</button>
+        <p id="result" class="result"></p>
+        <p id="result" class="result"><a href="index.html" class="link">Tìm hiểu thêm về chiến dịch Hồ Chí Minh </a>
+
+    </div>
+</body>
+</html>
+
